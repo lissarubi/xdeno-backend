@@ -50,8 +50,9 @@ function checkStreamers(client) {
         });
 
         res.on("close", () => {
+          streamerData = JSON.parse(data);
           if (streamerData.stream != null) {
-            streamOn(data, user, client);
+            streamOn(streamerData, user, client);
           }
         });
       }
@@ -60,7 +61,6 @@ function checkStreamers(client) {
 }
 
 function streamOn(data, user, client) {
-  streamerData = JSON.parse(data);
   https.get(
     "https://tmi.twitch.tv/group/user/" + user.name + "/chatters",
     (res) => {
