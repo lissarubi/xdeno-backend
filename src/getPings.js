@@ -11,17 +11,19 @@ const streamers = JSON.parse(
 firstDayCleanExecuted = false;
 
 const bots = [
-  "streamholics",
-  "streamelements",
-  "streamlabs",
-  "commanderroot",
-  "carbot14xyz",
-  "v_and_k",
-  "virgoproz",
   "aten",
+  "carbot14xyz",
   "cleaning_the_house",
+  "commanderroot",
   "discord_for_streamers",
   "music_and_arts",
+  "nightbot",
+  "streamelements",
+  "streamholics",
+  "streamlabs",
+  "v_and_k",
+  "virgoproz",
+  "wizebot",
 ];
 
 function checkStreamers(client) {
