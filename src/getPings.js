@@ -111,25 +111,9 @@ function savePing(broadcaster, user, client) {
   });
 }
 
-function removePingsOnMonthStart(client) {
-  let dateNow = new Date();
-
-  const pingsDB = client.db("xdeno").collection("pings");
-
-  if (dateNow.getUTCDay() > 1) {
-    firstDayCleanExecuted = false;
-  } else if (dateNow.getUTCDay() == 1 && firstDayCleanExecuted == false) {
-    pingsDB.remove({});
-    firstDayCleanExecuted = true;
-  }
-}
-
 exports.getPings = (client) => {
   checkStreamers(client);
   setInterval(() => {
     checkStreamers(client);
   }, 600000);
-  setInterval(() => {
-    removePingsOnMonthStart(client);
-  }, 6000000);
 };
